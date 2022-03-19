@@ -68,6 +68,7 @@ public class BaseProperties extends Properties {
             throw new FtpException(str + " not found");
         }
 
+        // FIXME: Use equalsIgnoreCase() for performance.
         return prop.toLowerCase().equals("true");
     }
 
