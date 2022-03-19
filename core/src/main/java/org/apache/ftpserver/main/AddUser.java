@@ -126,6 +126,7 @@ public class AddUser extends CommandLine {
                 System.out.println("User saved");
             }
         } catch (Exception ex) {
+            // TODO: Use Logger, not printStackTrace.
             ex.printStackTrace();
         }
 
