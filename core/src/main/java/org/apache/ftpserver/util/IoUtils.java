@@ -185,6 +185,7 @@ public class IoUtils {
                 sw.close();
                 result = sw.toString();
             } catch (Exception e) {
+                // TODO: Use Logger, not printStackTrace.
                 e.printStackTrace();
             }
         }
