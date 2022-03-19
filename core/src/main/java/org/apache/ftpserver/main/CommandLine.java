@@ -33,7 +33,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  */
 public class CommandLine {
 
-    static final Logger LOG = LoggerFactory.getLogger(AddUser.class);
+    static final Logger LOG = LoggerFactory.getLogger(CommandLine.class);
 
     /**
      * The purpose of this class is to allow the final user to start the
