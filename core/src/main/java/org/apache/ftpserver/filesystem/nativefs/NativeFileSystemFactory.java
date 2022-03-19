@@ -98,10 +98,7 @@ public class NativeFileSystemFactory implements FileSystemFactory {
                 }
             }
 
-            // TODO: Don't declare local variable.  Just return the damn thing.
-            FileSystemView fsView = new NativeFileSystemView(user,
-                    caseInsensitive);
-            return fsView;
+            return new NativeFileSystemView(user, caseInsensitive);
         }
     }
 
