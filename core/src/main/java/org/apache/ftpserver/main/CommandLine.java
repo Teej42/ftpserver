@@ -21,6 +21,8 @@ package org.apache.ftpserver.main;
 
 import org.apache.ftpserver.FtpServer;
 import org.apache.ftpserver.FtpServerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
@@ -30,6 +32,8 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
  */
 public class CommandLine {
+
+    static final Logger LOG = LoggerFactory.getLogger(AddUser.class);
 
     /**
      * The purpose of this class is to allow the final user to start the
@@ -65,8 +69,7 @@ public class CommandLine {
             // add shutdown hook if possible
             cli.addShutdownHook(server);
         } catch (Exception ex) {
-            // TODO: Use Logger, not printStackTrace.
-            ex.printStackTrace();
+            LOG.error("Error: ", ex);
         }
     }
 
