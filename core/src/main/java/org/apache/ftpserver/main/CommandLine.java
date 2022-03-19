@@ -65,6 +65,7 @@ public class CommandLine {
             // add shutdown hook if possible
             cli.addShutdownHook(server);
         } catch (Exception ex) {
+            // TODO: Use Logger, not printStackTrace.
             ex.printStackTrace();
         }
     }
