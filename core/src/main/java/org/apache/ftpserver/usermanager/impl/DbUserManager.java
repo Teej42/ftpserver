@@ -341,6 +341,7 @@ public class DbUserManager extends AbstractUserManager {
     public void save(User user) throws FtpException {
         // null value check
         if (user.getName() == null) {
+            // TODO: Change to IllegalArgumentException to make it clear it's user error.
             throw new NullPointerException("User name is null.");
         }
 
