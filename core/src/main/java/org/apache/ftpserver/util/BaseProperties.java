@@ -67,7 +67,7 @@ public class BaseProperties extends Properties {
         if (prop == null) {
             throw new FtpException(str + " not found");
         }
-        
+
         return "true".equalsIgnoreCase(prop);
     }
 
