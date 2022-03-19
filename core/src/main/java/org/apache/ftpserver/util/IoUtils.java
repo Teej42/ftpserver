@@ -33,6 +33,8 @@ import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Random;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <strong>Internal class, do not use directly.</strong>
@@ -47,6 +49,8 @@ import java.util.Random;
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
  */
 public class IoUtils {
+
+    static final Logger LOG = LoggerFactory.getLogger(IoUtils.class);
 
     /**
      * Random number generator to make unique file name
@@ -185,8 +189,7 @@ public class IoUtils {
                 sw.close();
                 result = sw.toString();
             } catch (Exception e) {
-                // TODO: Use Logger, not printStackTrace.
-                e.printStackTrace();
+                LOG.error("Error: ", e);
             }
         }
         return result;
