@@ -205,7 +205,7 @@ public class DefaultFtpServerContext implements FtpServerContext {
                 threadPoolExecutor.awaitTermination(5000, TimeUnit.MILLISECONDS);
             } catch (InterruptedException e) {
             } finally {
-                // TODO: how to handle?  TJG: Yeah, how to handle?!
+                LOG.info("End of the function.");
             }
         }
     }
