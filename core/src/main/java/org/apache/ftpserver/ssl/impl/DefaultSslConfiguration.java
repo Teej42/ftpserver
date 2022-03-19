@@ -21,6 +21,7 @@ package org.apache.ftpserver.ssl.impl;
 
 import java.security.GeneralSecurityException;
 
+import java.util.Arrays;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
@@ -73,7 +74,7 @@ public class DefaultSslConfiguration implements SslConfiguration {
         this.clientAuth = clientAuthReqd;
 
         // TODO: Copy the array, instead of just making a pointer. Security risk.
-        this.enabledCipherSuites = enabledCipherSuites;
+        this.enabledCipherSuites = Arrays.copyOf(enabledCipherSuites, enabledCipherSuites.length);
         this.keyAlias = keyAlias;
         this.keyManagerFactory = keyManagerFactory;
         this.sslProtocol = sslProtocol;
