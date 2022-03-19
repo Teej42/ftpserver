@@ -26,6 +26,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.ftpserver.FtpServer;
 import org.apache.ftpserver.ftplet.Authority;
 import org.apache.ftpserver.ftplet.UserManager;
@@ -42,6 +44,8 @@ import org.apache.ftpserver.usermanager.impl.WritePermission;
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
  */
 public class AddUser extends CommandLine {
+
+    static final Logger LOG = LoggerFactory.getLogger(AddUser.class);
 
     /**
      * Instance methods only used internaly
@@ -126,8 +130,7 @@ public class AddUser extends CommandLine {
                 System.out.println("User saved");
             }
         } catch (Exception ex) {
-            // TODO: Use Logger, not printStackTrace.
-            ex.printStackTrace();
+            LOG.error("Error: ", ex);
         }
 
     }
