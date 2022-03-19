@@ -1,0 +1,17 @@
+.idea
+**/META-INF
+.plxarc
+core/target/classes/org/apache/ftpserver/config/spring/ftpserver-1.0.xsd
+examples/ftpserver-example-spring-war/target/classes/ftpserver.jks
+core/target/classes/org/apache/ftpserver/message/FtpStatus.properties
+core/target/classes/org/apache/ftpserver/message/FtpStatus_en.properties
+core/target/classes/org/apache/ftpserver/message/FtpStatus_zh-tw.properties
+**/surefire-reports
+**/WEB-INF
+**/ftpserver.properties
+**/log4j.properties
+**/placeholder.properties
+**/users.properties
+*.jar
+*.war
+*.class
