@@ -45,6 +45,7 @@ public class RemoteIpFilter extends CopyOnWriteArraySet<Subnet> implements
     /**
      * Logger
      */
+    // TODO: Make this final.
     Logger LOGGER = LoggerFactory.getLogger(RemoteIpFilter.class);
 
     /**
