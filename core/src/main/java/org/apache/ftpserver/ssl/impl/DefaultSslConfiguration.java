@@ -71,6 +71,8 @@ public class DefaultSslConfiguration implements SslConfiguration {
     		throws GeneralSecurityException {
         super();
         this.clientAuth = clientAuthReqd;
+
+        // TODO: Copy the array, instead of just making a pointer. Security risk.
         this.enabledCipherSuites = enabledCipherSuites;
         this.keyAlias = keyAlias;
         this.keyManagerFactory = keyManagerFactory;
