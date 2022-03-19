@@ -92,9 +92,7 @@ public class Daemon {
             server = new FtpServerFactory().createServer();
         } else if ((args.length == 2) && args[1].equals("-default")) {
             // supported for backwards compatibility, but not documented
-            // TODO: Use Logger instead.
-            System.out
-                    .println("The -default switch is deprecated, please use --default instead");
+            LOG.info("The -default switch is deprecated, please use --default instead");
             LOG.info("Using default configuration....");
             server = new FtpServerFactory().createServer();
         } else if ((args.length == 2) && args[1].equals("--default")) {
@@ -112,15 +110,11 @@ public class Daemon {
                 if (beanNames.length == 1) {
                     server = (FtpServer) ctx.getBean(beanNames[0]);
                 } else if (beanNames.length > 1) {
-                    // TODO: Use Logger instead.
-                    System.out
-                            .println("Using the first server defined in the configuration, named "
+                    LOG.info("Using the first server defined in the configuration, named "
                                     + beanNames[0]);
                     server = (FtpServer) ctx.getBean(beanNames[0]);
                 } else {
-                    // TODO: Use Logger instead.
-                    System.err
-                            .println("XML configuration does not contain a server configuration");
+                    LOG.error("XML configuration does not contain a server configuration");
                 }
             }
         } else {
